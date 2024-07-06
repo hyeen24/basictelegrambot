@@ -18,7 +18,7 @@ async def help_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
 async def custom_command(update:Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('custom command')
 
-# Responses
+# Responses 
 def handle_response(text:str) -> str:
     if 'hello' in text:
         return 'Hey there!'
@@ -41,10 +41,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 if __name__ == '__main__':
     app = Application.builder().token(BOT_TOKEN).build()
 
+    # Command with the / function in telegram
     app.add_handler(CommandHandler('start',start_command))
     app.add_handler(CommandHandler('help',help_command))
     app.add_handler(CommandHandler('custom',custom_command))
 
+    # others
     app.add_handler(MessageHandler(filters.TEXT, handle_message))
 
     app.run_polling()
