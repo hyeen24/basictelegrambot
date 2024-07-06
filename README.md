@@ -27,3 +27,6 @@ BOT_USERNAME= "YOUR BOT USERNAME"
 ```
 
 There you have your very first telegram chat bot.
+
+Note this will not run after you close your IDE. If you wish to run 24/7 you will have to deploy onto cloud platform. 
+You can use services like Heroku, AWS, GCP or any other cloud provider.
